@@ -5,3 +5,7 @@ Las variables Globales usan 1913 bytes (93%) de la memoria dinámica, dejando 13
 -- SerialCommand (Single char commands) (-473 bytes)
 El Sketch usa 24636 bytes (85%) del espacio de almacenamiento de programa. El máximo es 28672 bytes.
 Las variables Globales usan 1437 bytes (70%) de la memoria dinámica, dejando 611 bytes para las variables locales. El máximo es 2048 bytes.
+
+-- Otto gestures and animations (PROGMEM) (-236 bytes)
+El Sketch usa 24432 bytes (85%) del espacio de almacenamiento de programa. El máximo es 28672 bytes.
+Las variables Globales usan 1201 bytes (58%) de la memoria dinámica, dejando 847 bytes para las variables locales. El máximo es 2048 bytes.

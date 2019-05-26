@@ -531,19 +531,16 @@ void Otto::flapping(float steps, int T, int h, int dir){
 //-- MOUTHS & ANIMATIONS ----------------------------------------//
 ///////////////////////////////////////////////////////////////////
 
-unsigned long int Otto::getMouthShape(int number){
-  unsigned long int types []={zero_code,one_code,two_code,three_code,four_code,five_code,six_code,seven_code,eight_code,
+PROGMEM const unsigned long int types []={zero_code,one_code,two_code,three_code,four_code,five_code,six_code,seven_code,eight_code,
   nine_code,smile_code,happyOpen_code,happyClosed_code,heart_code,bigSurprise_code,smallSurprise_code,tongueOut_code,
   vamp1_code,vamp2_code,lineMouth_code,confused_code,diagonal_code,sad_code,sadOpen_code,sadClosed_code,
   okMouth_code, xMouth_code,interrogation_code,thunder_code,culito_code,angry_code};
 
-  return types[number];
+unsigned long int Otto::getMouthShape(int number){
+  return pgm_read_dword(&(types[number]));
 }
 
-
-unsigned long int Otto::getAnimShape(int anim, int index){
-
-  unsigned long int littleUuh_code[]={
+PROGMEM const unsigned long int littleUuh_code[]={
      0b00000000000000001100001100000000,
      0b00000000000000000110000110000000,
      0b00000000000000000011000011000000,
@@ -554,14 +551,14 @@ unsigned long int Otto::getAnimShape(int anim, int index){
      0b00000000000000011000011000000000  
   };
 
-  unsigned long int dreamMouth_code[]={
+PROGMEM const unsigned long int dreamMouth_code[]={
      0b00000000000000000000110000110000,
      0b00000000000000010000101000010000,  
      0b00000000011000100100100100011000,
      0b00000000000000010000101000010000           
   };
 
-  unsigned long int adivinawi_code[]={
+PROGMEM const unsigned long int adivinawi_code[]={
      0b00100001000000000000000000100001,
      0b00010010100001000000100001010010,
      0b00001100010010100001010010001100,
@@ -570,7 +567,7 @@ unsigned long int Otto::getAnimShape(int anim, int index){
      0b00000000000000000000000000000000
   };
 
-  unsigned long int wave_code[]={
+PROGMEM const unsigned long int wave_code[]={
      0b00001100010010100001000000000000,
      0b00000110001001010000100000000000,
      0b00000011000100001000010000100000,
@@ -583,19 +580,19 @@ unsigned long int Otto::getAnimShape(int anim, int index){
      0b00011000100100000010000001000000    
   };
 
+unsigned long int Otto::getAnimShape(int anim, int index){
   switch  (anim){
-
     case littleUuh:
-        return littleUuh_code[index];
+		return pgm_read_dword(&(littleUuh_code[index]));
         break;
-    case dreamMouth:
-        return dreamMouth_code[index];
+		case dreamMouth:
+	return pgm_read_dword(&(dreamMouth_code[index]));
         break;
-    case adivinawi:
-        return adivinawi_code[index];
+		case adivinawi:
+	return pgm_read_dword(&(adivinawi_code[index]));
         break;
     case wave:
-        return wave_code[index];
+		return pgm_read_dword(&(wave_code[index]));
         break;    
   }   
 }
