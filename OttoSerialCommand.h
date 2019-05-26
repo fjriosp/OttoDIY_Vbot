@@ -45,7 +45,7 @@ class OttoSerialCommand
 		char *token;                        // Returned token from the command buffer as returned by strtok_r
 		char *last;                         // State variable used by strtok_r during processing
 		typedef struct _callback {
-			char command[SERIALCOMMANDBUFFER];
+			char command;
 			void (*function)();
 		} OttoSerialCommandCallback;            // Data structure to hold Command/Handler function key-value pairs
 		int numCommand;
