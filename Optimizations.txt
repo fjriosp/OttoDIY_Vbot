@@ -9,3 +9,7 @@ Las variables Globales usan 1437 bytes (70%) de la memoria dinámica, dejando 61
 -- Otto gestures and animations (PROGMEM) (-236 bytes)
 El Sketch usa 24432 bytes (85%) del espacio de almacenamiento de programa. El máximo es 28672 bytes.
 Las variables Globales usan 1201 bytes (58%) de la memoria dinámica, dejando 847 bytes para las variables locales. El máximo es 2048 bytes.
+
+-- MaxMatrix only one (-72 bytes)
+El Sketch usa 24436 bytes (85%) del espacio de almacenamiento de programa. El máximo es 28672 bytes.
+Las variables Globales usan 1129 bytes (55%) de la memoria dinámica, dejando 919 bytes para las variables locales. El máximo es 2048 bytes.

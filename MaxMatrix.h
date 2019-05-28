@@ -24,6 +24,9 @@
 #define max7219_reg_shutdown    0x0c
 #define max7219_reg_displayTest 0x0f
 
+#define MAXMODULES 1
+#define BUFSIZE 8*MAXMODULES
+
 class MaxMatrix
 {
   private:
@@ -31,9 +34,10 @@ class MaxMatrix
     byte load;
     byte clock;
     byte num;
-    byte buffer[80];
+    byte buffer[BUFSIZE];
     
     void reload();
+	void flush();
 	
   public:
     MaxMatrix(byte data, byte load, byte clock, byte num);
@@ -42,15 +46,6 @@ class MaxMatrix
     void clearMatrix();
     void setCommand(byte command, byte value);
     void setIntensity(byte intensity);
-    void setColumn(byte col, byte value);
-    void setColumnAll(byte col, byte value);
-    void setDot(byte col, byte row, byte value);
-    //void writeSprite(int x, int y, const byte* sprite);
-    
-    //void shiftLeft(bool rotate = false, bool fill_zero = true);
-    //void shiftRight(bool rotate = false, bool fill_zero = true);
-    //void shiftUp(bool rotate = false);
-    //void shiftDown(bool rotate = false);
     void writeFull(unsigned long value);
 };
 
